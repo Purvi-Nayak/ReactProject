@@ -11,6 +11,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { useRef } from "react";
 import Header from "../../container/Header";
 
+
 const Home = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -233,6 +234,60 @@ const Home = () => {
         </Box>
     </Box>
     {!loading && <ProductGrid products={filteredProducts.length ? filteredProducts : products} />}
+    <Box
+      sx={{
+        backgroundImage: `url(${IMAGES.footer})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        width: '1920px',
+        height: '362px',
+        bgcolor: '#e8e8ec',
+        py: 8,
+        textAlign: 'center',
+        justifyContent: 'center',
+        mt: 6
+      }}
+    >
+      <Container maxWidth="sm">
+        <Typography
+          variant="h4"
+          sx={{
+            color: '#151875',
+            fontWeight: 700,
+            mb: 2,
+            alignItems: 'center',
+          }}
+        >
+          Get Leatest Update By Subscribe
+        </Typography>
+        <Typography
+          sx={{
+            color: '#8A8FB9',
+            mb: 4
+          }}
+        >
+          Our Newsletter
+        </Typography>
+        <Button
+          variant="contained"
+          sx={{
+            bgcolor: '#FB2E86',
+            color: 'white',
+            alignItems: 'center',
+            px: 4,
+            py: 1.5,
+            '&:hover': {
+              bgcolor: '#e91e63'
+            },
+            textTransform: 'none',
+            fontSize: '1rem'
+          }}
+        >
+          Shop Now
+        </Button>
+      </Container>
+    </Box>
     </>
   );
 };

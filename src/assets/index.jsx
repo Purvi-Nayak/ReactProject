@@ -7,6 +7,8 @@ import Right from './images/Right.svg';
 import book from './images/book.svg';
 import error from './images/error.svg';
 import contact from './images/contact.svg';
+import footer from './images/footer.svg';
+import footerone from './images/footerone.svg';
 
 export const IMAGES = {
     backgroundimg,
@@ -18,4 +20,6 @@ export const IMAGES = {
     Right,
     error,
     contact,
+    footer,
+    footerone,
 };

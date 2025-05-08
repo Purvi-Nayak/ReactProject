@@ -30,7 +30,7 @@ import { useState ,useEffect} from "react";
 import { Snackbar, Alert } from '@mui/material';
 
 
-const ProductGrid = ({ products }) => {
+const ProductGrid = ({ products,onProductClick }) => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const [anchorEl, setAnchorEl] = useState(null);
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -91,7 +91,7 @@ const ProductGrid = ({ products }) => {
     if (reason === 'clickaway') return;
     setOpenSnackbar(false);
   };
-
+ 
   return (
     <Box sx={{ py: 6, bgcolor: "#F6F7FB" }}>
 
@@ -162,6 +162,7 @@ const ProductGrid = ({ products }) => {
                     },
                   },
                 }}
+                onClick={() => onProductClick(product.id)}
               >
                 <Box sx={{ position: "relative", height: 487 }}>
                   <CardMedia

@@ -10,6 +10,8 @@ import { cartActions } from "../../redux/slices/Cart.slice";
 import SearchIcon from '@mui/icons-material/Search';
 import { useRef } from "react";
 import Header from "../../container/Header";
+import { useNavigate } from "react-router-dom";
+import { URLS } from "../../constant/url";  
 
 
 const Home = () => {
@@ -17,6 +19,7 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const searchInputRef = useRef('');
+  const navigate = useNavigate();
   const handleSearch = (event) => {
     event.preventDefault();
     const searchQuery = searchInputRef.current.value.trim().toLowerCase();
@@ -32,7 +35,9 @@ const Home = () => {
       setFilteredProducts(products);
     }
   };
-
+  const handleProductClick = (productId) => {
+    navigate(`/products/${productId}`);
+  };
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -233,7 +238,7 @@ const Home = () => {
           </Button>
         </Box>
     </Box>
-    {!loading && <ProductGrid products={filteredProducts.length ? filteredProducts : products} />}
+    {!loading && <ProductGrid products={filteredProducts.length ? filteredProducts : products}  onProductClick={handleProductClick} />}
     <Box
       sx={{
         backgroundImage: `url(${IMAGES.footer})`,

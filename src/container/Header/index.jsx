@@ -129,11 +129,7 @@ const Header = () => {
     const searchQuery = searchInputRef.current.value.trim();
     console.log("searchQuery", searchQuery);
     
-    // if (searchQuery) {
-    //   navigate(`${URLS.Product}?search=${searchQuery}`);
-    // } else {
-    //   navigate(URLS.Product);
-    // }
+ 
   };
 
   const handleSubmit = (e) => {

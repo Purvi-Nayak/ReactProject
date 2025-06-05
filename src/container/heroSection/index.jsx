@@ -6,13 +6,13 @@ const HeroSection = () => {
   return (
     <Box
       sx={{
-        background: "linear-gradient(to right, #efd9f2 65%, ##efd9f2 35%)",
+       
         minHeight: "80vh",
         position: "relative",
         overflow: "hidden",
       }}
     >
-      <Container maxWidth="lg" backgroundColor="#f4d8f4">
+      <Container maxWidth="lg" backgroundColor="white">
         <Box
           sx={{
             display: "flex",
@@ -24,7 +24,7 @@ const HeroSection = () => {
           }}
         >
           {/* Left Content */}
-          <Box sx={{ maxWidth: "450px", zIndex: 1 ,backgroundColor:"#f4d8f4"}}>
+          <Box sx={{ maxWidth: "450px", zIndex: 1 }}>
    
             <Typography
               variant="subtitle1"
@@ -78,7 +78,7 @@ const HeroSection = () => {
                 width: "500px",
                 height: "500px",
                 borderRadius: "50%",
-                background: "#F2F0FF",
+              
                 position: "absolute",
                 right: "-100px",
                 top: "50%",

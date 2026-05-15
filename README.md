@@ -10,3 +10,28 @@ Currently, two official plugins are available:
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Docker (production)
+
+This project includes a multi-stage `Dockerfile` and an `nginx.conf` for SPA routing.
+
+### Build the image
+
+```bash
+docker build -t YOUR_USERNAME/ecommerse-frontend:latest .
+```
+
+### Run locally
+
+```bash
+docker run -d -p 8080:80 YOUR_USERNAME/ecommerse-frontend:latest
+```
+
+Then open: `http://localhost:8080`
+
+### Push to Docker Hub
+
+```bash
+docker login
+docker push YOUR_USERNAME/ecommerse-frontend:latest
+```

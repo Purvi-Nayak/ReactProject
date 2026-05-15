@@ -12,6 +12,7 @@ const useRoutes = () => {
             path: URLS.Home,
             element: Home,
             isAuth: true
+            
         },
         {
             id: 'login',
